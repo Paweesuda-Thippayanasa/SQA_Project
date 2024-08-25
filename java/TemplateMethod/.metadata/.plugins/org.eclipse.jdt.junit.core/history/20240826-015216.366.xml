@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AppointmentTest (4)" project="example" tests="3" started="3" failures="1" errors="0" ignored="0">
+  <testsuite name="com.template.maven.example.gemini15flash.round2.AppointmentTest" time="0.0" displayname="AppointmentTest" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round2.AppointmentTest]">
+    <testcase name="testCreateAppointmentWithNotes" classname="com.template.maven.example.gemini15flash.round2.AppointmentTest" time="0.0" displayname="testCreateAppointmentWithNotes()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round2.AppointmentTest]/[method:testCreateAppointmentWithNotes()]">
+      <failure>
+        <expected>Please bring your insurance card.</expected>
+        <actual>null</actual>
+        org.opentest4j.AssertionFailedError: expected: &lt;Please bring your insurance card.&gt; but was: &lt;null&gt;&#13;
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)&#13;
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)&#13;
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)&#13;
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)&#13;
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)&#13;
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)&#13;
+	at com.template.maven.example.gemini15flash.round2.AppointmentTest.testCreateAppointmentWithNotes(AppointmentTest.java:28)&#13;
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)&#13;
+&#13;
+
+      </failure>
+    </testcase>
+    <testcase name="testAllAppointmentTypes" classname="com.template.maven.example.gemini15flash.round2.AppointmentTest" time="0.0" displayname="testAllAppointmentTypes()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round2.AppointmentTest]/[method:testAllAppointmentTypes()]"/>
+    <testcase name="testCreateAppointmentWithoutNotes" classname="com.template.maven.example.gemini15flash.round2.AppointmentTest" time="0.0" displayname="testCreateAppointmentWithoutNotes()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round2.AppointmentTest]/[method:testCreateAppointmentWithoutNotes()]"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,78 @@
+package com.template.maven.example.gemini15flash.round1;
+//File: Appointment.java
+import java.time.LocalDateTime;
+
+public abstract class Appointment {
+
+    private String patientName;
+    private String doctorName;
+    private AppointmentType appointmentType;
+    private String appointmentMaker;
+    private String clinicContactNumber;
+    private LocalDateTime appointmentDateTime;
+    private String notes;
+
+    public enum AppointmentType {
+        TOOTH_EXTRACTION,
+        DEVICE_INSTALLATION,
+        MONTHLY_CHECK_UP,
+        DEVICE_REMOVAL
+    }
+
+    public Appointment(String patientName, String doctorName, AppointmentType appointmentType,
+                       String appointmentMaker, String clinicContactNumber, LocalDateTime appointmentDateTime) {
+        this.patientName = patientName;
+        this.doctorName = doctorName;
+        this.appointmentType = appointmentType;
+        this.appointmentMaker = appointmentMaker;
+        this.clinicContactNumber = clinicContactNumber;
+        this.appointmentDateTime = appointmentDateTime;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public AppointmentType getAppointmentType() {
+        return appointmentType;
+    }
+
+    public String getAppointmentMaker() {
+        return appointmentMaker;
+    }
+
+    public String getClinicContactNumber() {
+        return clinicContactNumber;
+    }
+
+    public LocalDateTime getAppointmentDateTime() {
+        return appointmentDateTime;
+    }
+
+    // Template Method
+    public void createAppointment() {
+        setRequiredFields();
+        addOptionalNotes();
+    }
+
+    // Hook methods (can be overridden by subclasses)
+    protected void setRequiredFields() {
+        // Implementation in subclasses to set required fields
+    }
+
+    protected void addOptionalNotes() {
+        // Implementation in subclasses to add notes
+    }
+}

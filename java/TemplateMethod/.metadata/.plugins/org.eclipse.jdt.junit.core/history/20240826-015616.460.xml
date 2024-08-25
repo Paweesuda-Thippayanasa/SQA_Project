@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AppointmentTest (5)" project="example" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="com.template.maven.example.gemini15flash.round3.AppointmentTest" time="0.0" displayname="AppointmentTest" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round3.AppointmentTest]">
+    <testcase name="testCreateAppointmentWithNotes" classname="com.template.maven.example.gemini15flash.round3.AppointmentTest" time="0.0" displayname="testCreateAppointmentWithNotes()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round3.AppointmentTest]/[method:testCreateAppointmentWithNotes()]"/>
+    <testcase name="testCreateAppointmentWithAllFields" classname="com.template.maven.example.gemini15flash.round3.AppointmentTest" time="0.0" displayname="testCreateAppointmentWithAllFields()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round3.AppointmentTest]/[method:testCreateAppointmentWithAllFields()]"/>
+    <testcase name="testCreateAppointmentAllTypes" classname="com.template.maven.example.gemini15flash.round3.AppointmentTest" time="0.0" displayname="testCreateAppointmentAllTypes()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.gemini15flash.round3.AppointmentTest]/[method:testCreateAppointmentAllTypes()]"/>
+  </testsuite>
+</testrun>

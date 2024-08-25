@@ -1,0 +1,75 @@
+package com.template.maven.example.gemini15flash.round3;
+//File: AppointmentTest.java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDateTime;
+
+public class AppointmentTest {
+
+    @Test
+    void testCreateAppointmentWithoutNotes() {
+        Appointment appointment = new Appointment();
+        LocalDateTime dateTime = LocalDateTime.of(2024, 1, 15, 10, 0);
+        appointment.createAppointment("John Doe", "Dr. Smith", Appointment.AppointmentType.MONTHLY_CHECK_UP,
+                                      "Jane Doe", "123-456-7890", dateTime);
+
+        assertEquals("John Doe", appointment.getPatientName());
+        assertEquals("Dr. Smith", appointment.getDoctorName());
+        assertEquals(Appointment.AppointmentType.MONTHLY_CHECK_UP, appointment.getAppointmentType());
+        assertEquals("Jane Doe", appointment.getAppointmentMakerName());
+        assertEquals("123-456-7890", appointment.getClinicContactNumber());
+        assertEquals(dateTime, appointment.getAppointmentDateTime());
+        assertEquals("", appointment.getNotes());
+    }
+
+    @Test
+    void testCreateAppointmentWithNotes() {
+        Appointment appointment = new Appointment() {
+            @Override
+            protected void addNotes() {
+                this.notes = "Please bring X-rays.";
+            }
+        };
+        LocalDateTime dateTime = LocalDateTime.of(2024, 1, 16, 11, 0);
+        appointment.createAppointment("Jane Doe", "Dr. Brown", Appointment.AppointmentType.DEVICE_REMOVAL,
+                                      "John Doe", "987-654-3210", dateTime);
+
+        assertEquals("Jane Doe", appointment.getPatientName());
+        assertEquals("Dr. Brown", appointment.getDoctorName());
+        assertEquals(Appointment.AppointmentType.DEVICE_REMOVAL, appointment.getAppointmentType());
+        assertEquals("John Doe", appointment.getAppointmentMakerName());
+        assertEquals("987-654-3210", appointment.getClinicContactNumber());
+        assertEquals(dateTime, appointment.getAppointmentDateTime());
+        assertEquals("Please bring X-rays.", appointment.getNotes());
+    }
+
+    @Test
+    void testCreateAppointmentWithAllTypes() {
+        Appointment appointment = new Appointment();
+        LocalDateTime dateTime = LocalDateTime.of(2024, 1, 17, 12, 0);
+
+        // Test all appointment types
+        for (Appointment.AppointmentType type : Appointment.AppointmentType.values()) {
+            appointment.createAppointment("Test Patient", "Dr. Test", type,
+                                          "Test Maker", "111-222-3333", dateTime);
+
+            assertEquals("Test Patient", appointment.getPatientName());
+            assertEquals("Dr. Test", appointment.getDoctorName());
+            assertEquals(type, appointment.getAppointmentType());
+            assertEquals("Test Maker", appointment.getAppointmentMakerName());
+            assertEquals("111-222-3333", appointment.getClinicContactNumber());
+            assertEquals(dateTime, appointment.getAppointmentDateTime());
+            assertEquals("", appointment.getNotes());
+        }
+    }
+
+    @Test
+    void testSetNotes() {
+        Appointment appointment = new Appointment();
+        appointment.createAppointment("John Doe", "Dr. Smith", Appointment.AppointmentType.TOOTH_EXTRACTION,
+                                      "Jane Doe", "123-456-7890", LocalDateTime.now());
+        appointment.setNotes("Additional information for the patient.");
+        assertEquals("Additional information for the patient.", appointment.getNotes());
+    }
+}

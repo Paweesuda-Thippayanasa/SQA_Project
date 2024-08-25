@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="AppointmentTest (1)" project="example" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.template.maven.example.chatgpt.round2.AppointmentTest" time="0.0" displayname="AppointmentTest" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round2.AppointmentTest]">
+    <testcase name="testDifferentAppointmentTypes" classname="com.template.maven.example.chatgpt.round2.AppointmentTest" time="0.0" displayname="testDifferentAppointmentTypes()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round2.AppointmentTest]/[method:testDifferentAppointmentTypes()]"/>
+    <testcase name="testAppointmentCreation" classname="com.template.maven.example.chatgpt.round2.AppointmentTest" time="0.0" displayname="testAppointmentCreation()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round2.AppointmentTest]/[method:testAppointmentCreation()]"/>
+  </testsuite>
+</testrun>

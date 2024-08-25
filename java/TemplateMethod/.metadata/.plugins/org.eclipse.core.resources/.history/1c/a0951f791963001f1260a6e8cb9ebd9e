@@ -1,0 +1,69 @@
+package com.template.maven.example.githubcopilot.round3;
+
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+import java.util.Date;
+
+public class AppointmentTest {
+    private ToothExtractionAppointment toothExtractionAppointment;
+    private DeviceInstallationAppointment deviceInstallationAppointment;
+    private MonthlyCheckupAppointment monthlyCheckupAppointment;
+    private DeviceRemovalAppointment deviceRemovalAppointment;
+
+    @Before
+    public void setUp() {
+        toothExtractionAppointment = new ToothExtractionAppointment("John Doe", "Dr. Smith", "Jane Doe", "123-456-7890", new Date());
+        deviceInstallationAppointment = new DeviceInstallationAppointment("Alice Brown", "Dr. Johnson", "Bob Brown", "123-456-7890", new Date());
+        monthlyCheckupAppointment = new MonthlyCheckupAppointment("Charlie Green", "Dr. White", "Dana Green", "123-456-7890", new Date());
+        deviceRemovalAppointment = new DeviceRemovalAppointment("Eve Black", "Dr. Grey", "Frank Black", "123-456-7890", new Date());
+    }
+
+    @Test
+    public void testToothExtractionAppointmentCreation() {
+        toothExtractionAppointment.createAppointment();
+        assertEquals("John Doe", toothExtractionAppointment.getPatientName());
+        assertEquals("Dr. Smith", toothExtractionAppointment.getDoctorName());
+        assertEquals(Appointment.AppointmentType.TOOTH_EXTRACTION, toothExtractionAppointment.getAppointmentType());
+        assertEquals("Jane Doe", toothExtractionAppointment.getPersonMakingAppointment());
+        assertEquals("123-456-7890", toothExtractionAppointment.getClinicContactNumber());
+        assertNotNull(toothExtractionAppointment.getAppointmentDateTime());
+        assertEquals("Please bring your previous dental records.", toothExtractionAppointment.getNotes());
+    }
+
+    @Test
+    public void testDeviceInstallationAppointmentCreation() {
+        deviceInstallationAppointment.createAppointment();
+        assertEquals("Alice Brown", deviceInstallationAppointment.getPatientName());
+        assertEquals("Dr. Johnson", deviceInstallationAppointment.getDoctorName());
+        assertEquals(Appointment.AppointmentType.DEVICE_INSTALLATION, deviceInstallationAppointment.getAppointmentType());
+        assertEquals("Bob Brown", deviceInstallationAppointment.getPersonMakingAppointment());
+        assertEquals("123-456-7890", deviceInstallationAppointment.getClinicContactNumber());
+        assertNotNull(deviceInstallationAppointment.getAppointmentDateTime());
+        assertEquals("Please follow the pre-installation instructions.", deviceInstallationAppointment.getNotes());
+    }
+
+    @Test
+    public void testMonthlyCheckupAppointmentCreation() {
+        monthlyCheckupAppointment.createAppointment();
+        assertEquals("Charlie Green", monthlyCheckupAppointment.getPatientName());
+        assertEquals("Dr. White", monthlyCheckupAppointment.getDoctorName());
+        assertEquals(Appointment.AppointmentType.MONTHLY_CHECKUP, monthlyCheckupAppointment.getAppointmentType());
+        assertEquals("Dana Green", monthlyCheckupAppointment.getPersonMakingAppointment());
+        assertEquals("123-456-7890", monthlyCheckupAppointment.getClinicContactNumber());
+        assertNotNull(monthlyCheckupAppointment.getAppointmentDateTime());
+        assertEquals("Please bring your previous check-up records.", monthlyCheckupAppointment.getNotes());
+    }
+
+    @Test
+    public void testDeviceRemovalAppointmentCreation() {
+        deviceRemovalAppointment.createAppointment();
+        assertEquals("Eve Black", deviceRemovalAppointment.getPatientName());
+        assertEquals("Dr. Grey", deviceRemovalAppointment.getDoctorName());
+        assertEquals(Appointment.AppointmentType.DEVICE_REMOVAL, deviceRemovalAppointment.getAppointmentType());
+        assertEquals("Frank Black", deviceRemovalAppointment.getPersonMakingAppointment());
+        assertEquals("123-456-7890", deviceRemovalAppointment.getClinicContactNumber());
+        assertNotNull(deviceRemovalAppointment.getAppointmentDateTime());
+        assertEquals("Please follow the post-removal care instructions.", deviceRemovalAppointment.getNotes());
+    }
+}

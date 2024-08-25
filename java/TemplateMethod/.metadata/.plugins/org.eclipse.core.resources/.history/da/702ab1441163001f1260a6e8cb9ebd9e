@@ -1,0 +1,102 @@
+package com.template.maven.example.chatgpt.round3;
+//AppointmentType.java
+public enum AppointmentType {
+ TOOTH_EXTRACTION,
+ DEVICE_INSTALLATION,
+ MONTHLY_CHECKUP,
+ DEVICE_REMOVAL
+}
+
+//Appointment.java
+public abstract class Appointment {
+ private String patientName;
+ private String doctorName;
+ private AppointmentType appointmentType;
+ private String scheduledBy;
+ private String clinicContact;
+ private String appointmentDateTime;
+ private String notes;
+
+ // Template Method
+ public final void scheduleAppointment() {
+     setPatientName();
+     setDoctorName();
+     setAppointmentType();
+     setScheduledBy();
+     setClinicContact();
+     setAppointmentDateTime();
+     addNotes();
+ }
+
+ protected abstract void setPatientName();
+ protected abstract void setDoctorName();
+ protected abstract void setAppointmentType();
+ protected abstract void setScheduledBy();
+ protected abstract void setClinicContact();
+ protected abstract void setAppointmentDateTime();
+
+ protected void addNotes() {
+     // Optional method
+ }
+
+ // Getters and setters
+ public String getPatientName() { return patientName; }
+ public void setPatientName(String patientName) { this.patientName = patientName; }
+
+ public String getDoctorName() { return doctorName; }
+ public void setDoctorName(String doctorName) { this.doctorName = doctorName; }
+
+ public AppointmentType getAppointmentType() { return appointmentType; }
+ public void setAppointmentType(AppointmentType appointmentType) { this.appointmentType = appointmentType; }
+
+ public String getScheduledBy() { return scheduledBy; }
+ public void setScheduledBy(String scheduledBy) { this.scheduledBy = scheduledBy; }
+
+ public String getClinicContact() { return clinicContact; }
+ public void setClinicContact(String clinicContact) { this.clinicContact = clinicContact; }
+
+ public String getAppointmentDateTime() { return appointmentDateTime; }
+ public void setAppointmentDateTime(String appointmentDateTime) { this.appointmentDateTime = appointmentDateTime; }
+
+ public String getNotes() { return notes; }
+ public void setNotes(String notes) { this.notes = notes; }
+}
+
+//Concrete Class Example: ToothExtractionAppointment.java
+public class ToothExtractionAppointment extends Appointment {
+
+ @Override
+ protected void setPatientName() {
+     setPatientName("John Doe");
+ }
+
+ @Override
+ protected void setDoctorName() {
+     setDoctorName("Dr. Smith");
+ }
+
+ @Override
+ protected void setAppointmentType() {
+     setAppointmentType(AppointmentType.TOOTH_EXTRACTION);
+ }
+
+ @Override
+ protected void setScheduledBy() {
+     setScheduledBy("Jane Doe");
+ }
+
+ @Override
+ protected void setClinicContact() {
+     setClinicContact("555-1234");
+ }
+
+ @Override
+ protected void setAppointmentDateTime() {
+     setAppointmentDateTime("2024-08-30 14:00");
+ }
+
+ @Override
+ protected void addNotes() {
+     setNotes("Patient has a severe toothache.");
+ }
+}

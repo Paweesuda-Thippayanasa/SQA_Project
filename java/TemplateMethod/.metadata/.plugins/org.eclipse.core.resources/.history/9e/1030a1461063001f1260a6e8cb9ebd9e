@@ -1,0 +1,96 @@
+package com.template.maven.example.chatgpt.round2;
+
+import java.time.LocalDateTime;
+
+//Enum for appointment types
+enum AppointmentType {
+ TOOTH_EXTRACTION,
+ DEVICE_INSTALLATION,
+ MONTHLY_CHECKUP,
+ DEVICE_REMOVAL
+}
+
+//Abstract class implementing the Template Method Pattern
+abstract class AppointmentBuilder {
+ protected String patientName;
+ protected String doctorName;
+ protected AppointmentType appointmentType;
+ protected String appointmentMakerName;
+ protected String clinicContactNumber;
+ protected LocalDateTime appointmentDateTime;
+ protected String notes;
+
+ public final Appointment build() {
+     setRequiredFields();
+     return new Appointment(patientName, doctorName, appointmentType, appointmentMakerName, clinicContactNumber, appointmentDateTime, notes);
+ }
+
+ protected abstract void setRequiredFields();
+
+ public AppointmentBuilder withNotes(String notes) {
+     this.notes = notes;
+     return this;
+ }
+}
+
+//Concrete builder class
+class ConcreteAppointmentBuilder extends AppointmentBuilder {
+ public ConcreteAppointmentBuilder(String patientName, String doctorName, AppointmentType appointmentType,
+                                   String appointmentMakerName, String clinicContactNumber, LocalDateTime appointmentDateTime) {
+     this.patientName = patientName;
+     this.doctorName = doctorName;
+     this.appointmentType = appointmentType;
+     this.appointmentMakerName = appointmentMakerName;
+     this.clinicContactNumber = clinicContactNumber;
+     this.appointmentDateTime = appointmentDateTime;
+ }
+
+ @Override
+ protected void setRequiredFields() {
+     // No additional setup required in this case
+ }
+}
+
+//Appointment class
+class Appointment {
+ private final String patientName;
+ private final String doctorName;
+ private final AppointmentType appointmentType;
+ private final String appointmentMakerName;
+ private final String clinicContactNumber;
+ private final LocalDateTime appointmentDateTime;
+ private final String notes;
+
+ public Appointment(String patientName, String doctorName, AppointmentType appointmentType, String appointmentMakerName,
+                    String clinicContactNumber, LocalDateTime appointmentDateTime, String notes) {
+     this.patientName = patientName;
+     this.doctorName = doctorName;
+     this.appointmentType = appointmentType;
+     this.appointmentMakerName = appointmentMakerName;
+     this.clinicContactNumber = clinicContactNumber;
+     this.appointmentDateTime = appointmentDateTime;
+     this.notes = notes;
+ }
+
+ // Getters and toString() for testing purposes
+ public String getPatientName() { return patientName; }
+ public String getDoctorName() { return doctorName; }
+ public AppointmentType getAppointmentType() { return appointmentType; }
+ public String getAppointmentMakerName() { return appointmentMakerName; }
+ public String getClinicContactNumber() { return clinicContactNumber; }
+ public LocalDateTime getAppointmentDateTime() { return appointmentDateTime; }
+ public String getNotes() { return notes; }
+
+ @Override
+ public String toString() {
+     return "Appointment{" +
+             "patientName='" + patientName + '\'' +
+             ", doctorName='" + doctorName + '\'' +
+             ", appointmentType=" + appointmentType +
+             ", appointmentMakerName='" + appointmentMakerName + '\'' +
+             ", clinicContactNumber='" + clinicContactNumber + '\'' +
+             ", appointmentDateTime=" + appointmentDateTime +
+             ", notes='" + notes + '\'' +
+             '}';
+ }
+}

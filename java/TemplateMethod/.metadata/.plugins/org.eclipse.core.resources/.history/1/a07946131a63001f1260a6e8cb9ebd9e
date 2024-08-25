@@ -1,0 +1,56 @@
+package com.template.maven.example.githubcopilot.round3;
+//AppointmentTest.java
+
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import java.time.LocalDateTime;
+
+public class AppointmentTest {
+ private Appointment appointment;
+
+ @BeforeEach
+ public void setUp() {
+     appointment = new Appointment("John Doe", "Dr. Smith", AppointmentType.TOOTH_EXTRACTION, 
+                                   "Jane Doe", "123-456-7890", LocalDateTime.now()) {
+         @Override
+         protected void setRequiredFields() {
+             // Required fields are already set in the constructor
+         }
+     };
+ }
+
+ @Test
+ public void testAppointmentCreation() {
+     appointment.createAppointment();
+     assertEquals("John Doe", appointment.getPatientName());
+     assertEquals("Dr. Smith", appointment.getDoctorName());
+     assertEquals(AppointmentType.TOOTH_EXTRACTION, appointment.getAppointmentType());
+     assertEquals("Jane Doe", appointment.getPersonMakingAppointment());
+     assertEquals("123-456-7890", appointment.getClinicContactNumber());
+     assertNotNull(appointment.getAppointmentDateTime());
+ }
+
+ @Test
+ public void testAddNotes() {
+     appointment.setNotes("Bring previous medical records.");
+     appointment.createAppointment();
+     assertEquals("Bring previous medical records.", appointment.getNotes());
+ }
+
+ @Test
+ public void testAllAppointmentTypes() {
+     for (AppointmentType type : AppointmentType.values()) {
+         appointment = new Appointment("John Doe", "Dr. Smith", type, 
+                                       "Jane Doe", "123-456-7890", LocalDateTime.now()) {
+             @Override
+             protected void setRequiredFields() {
+                 // Required fields are already set in the constructor
+             }
+         };
+         appointment.createAppointment();
+         assertEquals(type, appointment.getAppointmentType());
+     }
+ }
+}
