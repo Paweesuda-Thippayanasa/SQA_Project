@@ -1,0 +1,9 @@
+Prompt: Design a program for scheduling appointments for an orthodontic clinic using the "Builder Pattern
+" design pattern. The program should be implemented in Python according to the following requirements:
+
+Requirements:
+
+The types of appointments include tooth extraction, monthly rubber band change, removal of braces, and fitting of braces.
+The clinic has multiple doctors, and each patient can have only one doctor.
+The appointment record should include the doctor's name, patient's name, type of appointment, date and time of the appointment, a note (from the doctor for providing additional information to the patient), the name of the person creating the appointment, and the clinic's contact number (mobile number).
+Additionally, write a test function for creating an appointment using 100% Statement Coverage with Pytest ,Test fixture,Test Suites
