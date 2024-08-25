@@ -20,6 +20,7 @@ def appointment_data():
     }
 
 # Test Cases using the Fixture
+
 def test_tooth_extraction_appointment(appointment_data):
     appointment = ToothExtractionAppointment().schedule_appointment(**appointment_data)
     assert appointment["doctor_name"] == appointment_data["doctor_name"]
