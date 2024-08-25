@@ -1,3 +1,4 @@
+
 class Appointment:
     def __init__(self, doctor_name, patient_name, appointment_type, date_time, note, creator_name, clinic_contact):
         self.doctor_name = doctor_name

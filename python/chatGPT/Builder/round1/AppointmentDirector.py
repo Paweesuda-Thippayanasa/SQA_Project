@@ -1,3 +1,4 @@
+
 class AppointmentDirector:
     def __init__(self, builder):
         self._builder = builder
