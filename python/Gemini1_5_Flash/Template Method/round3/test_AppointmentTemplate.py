@@ -1,4 +1,3 @@
-# test_appointment.py
 import pytest
 from appointmentTemplate import ToothExtractionAppointment, MonthlyRubberBandChangeAppointment, \
     RemovalOfBracesAppointment, FittingOfBracesAppointment

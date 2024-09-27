@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="AppointmentTest (2)" project="example" tests="4" started="4" failures="0" errors="0" ignored="0">
-  <testsuite name="com.template.maven.example.chatgpt.round3.AppointmentTest" time="0.0" displayname="AppointmentTest" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round3.AppointmentTest]">
-    <testcase name="testToothExtractionAppointment" classname="com.template.maven.example.chatgpt.round3.AppointmentTest" time="0.0" displayname="testToothExtractionAppointment()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round3.AppointmentTest]/[method:testToothExtractionAppointment()]"/>
-    <testcase name="testMonthlyCheckupAppointment" classname="com.template.maven.example.chatgpt.round3.AppointmentTest" time="0.0" displayname="testMonthlyCheckupAppointment()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round3.AppointmentTest]/[method:testMonthlyCheckupAppointment()]"/>
-    <testcase name="testDeviceRemovalAppointment" classname="com.template.maven.example.chatgpt.round3.AppointmentTest" time="0.0" displayname="testDeviceRemovalAppointment()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round3.AppointmentTest]/[method:testDeviceRemovalAppointment()]"/>
-    <testcase name="testDeviceInstallationAppointment" classname="com.template.maven.example.chatgpt.round3.AppointmentTest" time="0.0" displayname="testDeviceInstallationAppointment()" uniqueid="[engine:junit-jupiter]/[class:com.template.maven.example.chatgpt.round3.AppointmentTest]/[method:testDeviceInstallationAppointment()]"/>
-  </testsuite>
-</testrun>
