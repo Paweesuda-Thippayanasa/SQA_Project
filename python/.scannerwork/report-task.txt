@@ -1,0 +1,6 @@
+projectKey=test-python
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=test-python
+ceTaskId=dbde45d5-444a-4355-a6e4-d22ae761aa14
+ceTaskUrl=http://localhost:9000/api/ce/task?id=dbde45d5-444a-4355-a6e4-d22ae761aa14
