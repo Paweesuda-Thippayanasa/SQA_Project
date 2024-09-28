@@ -47,9 +47,64 @@ public class Appointment {
         public Appointment build() {
             return new Appointment(this);
         }
+
+
     }
 
     // Getters for all fields can be added here if needed
+    // Getter and Setter methods for all fields
+
+    public String getPatientName() {
+        return patientName;
+    }
+
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
+
+    public String getDoctorName() {
+        return doctorName;
+    }
+
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public AppointmentType getAppointmentType() {
+        return appointmentType;
+    }
+
+    public void setAppointmentType(AppointmentType appointmentType) {
+        this.appointmentType = appointmentType;
+    }
+
+    public String getAppointmentMakerName() {
+        return appointmentMakerName;
+    }
+
+    public void setAppointmentMakerName(String appointmentMakerName) {
+        this.appointmentMakerName = appointmentMakerName;
+    }
+
+    public String getClinicContactNumber() {
+        return clinicContactNumber;
+    }
+
+    public void setClinicContactNumber(String clinicContactNumber) {
+        this.clinicContactNumber = clinicContactNumber;
+    }
+
+    public LocalDateTime getAppointmentDateTime() {
+        return appointmentDateTime;
+    }
+
+    public void setAppointmentDateTime(LocalDateTime appointmentDateTime) {
+        this.appointmentDateTime = appointmentDateTime;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
 }
 
 enum AppointmentType {
