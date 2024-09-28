@@ -1,5 +1,5 @@
 package org.copilot.round2;
-// Appointment.java
+
 import java.time.LocalDateTime;
 
 public class Appointment {
@@ -50,13 +50,40 @@ public class Appointment {
         }
     }
 
-    // Getters for all fields can be added here if needed
+    // Getters for all fields
+    public String getPatientName() {
+        return patientName;
+    }
 
-}
+    public String getDoctorName() {
+        return doctorName;
+    }
 
-enum AppointmentType {
-    TOOTH_EXTRACTION,
-    DEVICE_INSTALLATION,
-    MONTHLY_CHECKUP,
-    DEVICE_REMOVAL
+    public AppointmentType getAppointmentType() {
+        return appointmentType;
+    }
+
+    public String getAppointmentMakerName() {
+        return appointmentMakerName;
+    }
+
+    public String getClinicContactNumber() {
+        return clinicContactNumber;
+    }
+
+    public LocalDateTime getAppointmentDateTime() {
+        return appointmentDateTime;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+
+    enum AppointmentType {
+        TOOTH_EXTRACTION,
+        DEVICE_INSTALLATION,
+        MONTHLY_CHECKUP,
+        DEVICE_REMOVAL
+    }
 }
