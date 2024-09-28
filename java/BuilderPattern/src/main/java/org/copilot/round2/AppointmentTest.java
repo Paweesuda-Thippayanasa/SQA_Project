@@ -1,10 +1,9 @@
 package org.copilot.round2;
 
 import org.junit.jupiter.api.Test;
-
 import java.time.LocalDateTime;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class AppointmentTest {
 
@@ -12,13 +11,13 @@ class AppointmentTest {
     void testAppointmentCreation() {
         LocalDateTime appointmentDateTime = LocalDateTime.of(2024, 1, 15, 10, 0);
         Appointment appointment = new Appointment.AppointmentBuilder("John Doe", "Dr. Smith", Appointment.AppointmentType.MONTHLY_CHECKUP, "Jane Doe", "123-456-7890", appointmentDateTime)
-                .withNotes("Check teeth cleaning")
+                .setNotes("Check teeth cleaning")
                 .build();
 
         assertEquals("John Doe", appointment.getPatientName());
         assertEquals("Dr. Smith", appointment.getDoctorName());
         assertEquals(Appointment.AppointmentType.MONTHLY_CHECKUP, appointment.getAppointmentType());
-        assertEquals("Jane Doe", appointment.getAppointmentMaker());
+        assertEquals("Jane Doe", appointment.getAppointmentMakerName()); // from getAppointmentMaker to getAppointmentMakerName
         assertEquals("123-456-7890", appointment.getClinicContactNumber());
         assertEquals(appointmentDateTime, appointment.getAppointmentDateTime());
         assertEquals("Check teeth cleaning", appointment.getNotes());
@@ -33,7 +32,7 @@ class AppointmentTest {
         assertEquals("John Doe", appointment.getPatientName());
         assertEquals("Dr. Smith", appointment.getDoctorName());
         assertEquals(Appointment.AppointmentType.DEVICE_REMOVAL, appointment.getAppointmentType());
-        assertEquals("Jane Doe", appointment.getAppointmentMaker());
+        assertEquals("Jane Doe", appointment.getAppointmentMakerName()); // from getAppointmentMaker to getAppointmentMakerName
         assertEquals("123-456-7890", appointment.getClinicContactNumber());
         assertEquals(appointmentDateTime, appointment.getAppointmentDateTime());
         assertNull(appointment.getNotes());
