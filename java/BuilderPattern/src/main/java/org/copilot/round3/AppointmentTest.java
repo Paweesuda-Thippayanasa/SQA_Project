@@ -20,14 +20,14 @@ public class AppointmentTest {
 
     @Test
     public void testAppointmentCreation() {
-        assertNotNull(appointment);
-        assertEquals("John Doe", appointment.patientName);
-        assertEquals("Dr. Smith", appointment.doctorName);
-        assertEquals(AppointmentType.DEVICE_INSTALLATION, appointment.appointmentType);
-        assertEquals("Jane Doe", appointment.appointmentMakerName);
-        assertEquals("123-456-7890", appointment.clinicContactNumber);
-        assertEquals(LocalDateTime.of(2024, 9, 1, 14, 30), appointment.appointmentDateTime);
-        assertEquals("Bring previous X-rays", appointment.notes);
+        assertNotNull(appointment); //change all of this to get
+        assertEquals("John Doe", appointment.getPatientName());
+        assertEquals("Dr. Smith", appointment.getDoctorName());
+        assertEquals(AppointmentType.DEVICE_INSTALLATION, appointment.getAppointmentType());
+        assertEquals("Jane Doe", appointment.getAppointmentMakerName());
+        assertEquals("123-456-7890", appointment.getClinicContactNumber());
+        assertEquals(LocalDateTime.of(2024, 9, 1, 14, 30), appointment.getAppointmentDateTime());
+        assertEquals("Bring previous X-rays", appointment.getNotes());
     }
 
     @Test
@@ -36,7 +36,7 @@ public class AppointmentTest {
             Appointment appointment = new Appointment.AppointmentBuilder("John Doe", "Dr. Smith",
                     type, "Jane Doe", "123-456-7890", LocalDateTime.of(2024, 9, 1, 14, 30))
                     .build();
-            assertEquals(type, appointment.appointmentType);
+            assertEquals(type, appointment.getAppointmentType());
         }
     }
 }
