@@ -1,0 +1,14 @@
+INDEX VERSION 1.134+C:\การศึกษา\ปี 3\Software Quality Assurance\JavaTest\BuilderPattern\.metadata\.plugins\org.eclipse.jdt.core
+1621124828.index
+1186343183.index
+2446752305.index
+1865797976.index
+2330698691.index
+2184824939.index
+2195509060.index
+691393043.index
+3453837059.index
+2727448527.index
+3313847074.index
+3596295255.index
+627444988.index

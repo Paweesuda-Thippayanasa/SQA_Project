@@ -1,0 +1,170 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AppointmentTest</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.template.maven.example.chatgpt.round3</a>
+</div>
+
+<h1>Coverage Summary for Class: AppointmentTest (com.template.maven.example.chatgpt.round3)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AppointmentTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (37/37)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.template.maven.example.chatgpt.round3;
+&nbsp;import org.junit.jupiter.api.BeforeEach;
+&nbsp;import org.junit.jupiter.api.Test;
+&nbsp;import static org.junit.jupiter.api.Assertions.*;
+&nbsp;
+<b class="fc">&nbsp;class AppointmentTest {</b>
+&nbsp;    private ToothExtractionAppointment toothExtractionAppointment;
+&nbsp;    private DeviceInstallationAppointment deviceInstallationAppointment;
+&nbsp;    private MonthlyCheckupAppointment monthlyCheckupAppointment;
+&nbsp;    private DeviceRemovalAppointment deviceRemovalAppointment;
+&nbsp;
+&nbsp;    @BeforeEach
+&nbsp;    void setUp() {
+<b class="fc">&nbsp;        toothExtractionAppointment = new ToothExtractionAppointment();</b>
+<b class="fc">&nbsp;        deviceInstallationAppointment = new DeviceInstallationAppointment();</b>
+<b class="fc">&nbsp;        monthlyCheckupAppointment = new MonthlyCheckupAppointment();</b>
+<b class="fc">&nbsp;        deviceRemovalAppointment = new DeviceRemovalAppointment();</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void testToothExtractionAppointment() {
+<b class="fc">&nbsp;        toothExtractionAppointment.scheduleAppointment(&quot;John Doe&quot;, &quot;Dr. Smith&quot;, AppointmentType.TOOTH_EXTRACTION, &quot;Jane Doe&quot;, &quot;123-456-7890&quot;, &quot;2024-09-01 10:00 AM&quot;);</b>
+<b class="fc">&nbsp;        assertEquals(&quot;John Doe&quot;, toothExtractionAppointment.getPatientName());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Dr. Smith&quot;, toothExtractionAppointment.getDoctorName());</b>
+<b class="fc">&nbsp;        assertEquals(AppointmentType.TOOTH_EXTRACTION, toothExtractionAppointment.getAppointmentType());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Jane Doe&quot;, toothExtractionAppointment.getBookedBy());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;123-456-7890&quot;, toothExtractionAppointment.getClinicContactNumber());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;2024-09-01 10:00 AM&quot;, toothExtractionAppointment.getAppointmentDateTime());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Patient should avoid eating hard food for 24 hours.&quot;, toothExtractionAppointment.getNotes());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void testDeviceInstallationAppointment() {
+<b class="fc">&nbsp;        deviceInstallationAppointment.scheduleAppointment(&quot;John Doe&quot;, &quot;Dr. Smith&quot;, AppointmentType.DEVICE_INSTALLATION, &quot;Jane Doe&quot;, &quot;123-456-7890&quot;, &quot;2024-09-02 11:00 AM&quot;);</b>
+<b class="fc">&nbsp;        assertEquals(&quot;John Doe&quot;, deviceInstallationAppointment.getPatientName());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Dr. Smith&quot;, deviceInstallationAppointment.getDoctorName());</b>
+<b class="fc">&nbsp;        assertEquals(AppointmentType.DEVICE_INSTALLATION, deviceInstallationAppointment.getAppointmentType());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Jane Doe&quot;, deviceInstallationAppointment.getBookedBy());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;123-456-7890&quot;, deviceInstallationAppointment.getClinicContactNumber());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;2024-09-02 11:00 AM&quot;, deviceInstallationAppointment.getAppointmentDateTime());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Patient should follow up after one week.&quot;, deviceInstallationAppointment.getNotes());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void testMonthlyCheckupAppointment() {
+<b class="fc">&nbsp;        monthlyCheckupAppointment.scheduleAppointment(&quot;John Doe&quot;, &quot;Dr. Smith&quot;, AppointmentType.MONTHLY_CHECKUP, &quot;Jane Doe&quot;, &quot;123-456-7890&quot;, &quot;2024-09-03 12:00 PM&quot;);</b>
+<b class="fc">&nbsp;        assertEquals(&quot;John Doe&quot;, monthlyCheckupAppointment.getPatientName());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Dr. Smith&quot;, monthlyCheckupAppointment.getDoctorName());</b>
+<b class="fc">&nbsp;        assertEquals(AppointmentType.MONTHLY_CHECKUP, monthlyCheckupAppointment.getAppointmentType());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Jane Doe&quot;, monthlyCheckupAppointment.getBookedBy());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;123-456-7890&quot;, monthlyCheckupAppointment.getClinicContactNumber());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;2024-09-03 12:00 PM&quot;, monthlyCheckupAppointment.getAppointmentDateTime());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Check for any discomfort with the device.&quot;, monthlyCheckupAppointment.getNotes());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void testDeviceRemovalAppointment() {
+<b class="fc">&nbsp;        deviceRemovalAppointment.scheduleAppointment(&quot;John Doe&quot;, &quot;Dr. Smith&quot;, AppointmentType.DEVICE_REMOVAL, &quot;Jane Doe&quot;, &quot;123-456-7890&quot;, &quot;2024-09-04 01:00 PM&quot;);</b>
+<b class="fc">&nbsp;        assertEquals(&quot;John Doe&quot;, deviceRemovalAppointment.getPatientName());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Dr. Smith&quot;, deviceRemovalAppointment.getDoctorName());</b>
+<b class="fc">&nbsp;        assertEquals(AppointmentType.DEVICE_REMOVAL, deviceRemovalAppointment.getAppointmentType());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Jane Doe&quot;, deviceRemovalAppointment.getBookedBy());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;123-456-7890&quot;, deviceRemovalAppointment.getClinicContactNumber());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;2024-09-04 01:00 PM&quot;, deviceRemovalAppointment.getAppointmentDateTime());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Patient should wear retainers after device removal.&quot;, deviceRemovalAppointment.getNotes());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-29 16:29</div>
+</div>
+</body>
+</html>

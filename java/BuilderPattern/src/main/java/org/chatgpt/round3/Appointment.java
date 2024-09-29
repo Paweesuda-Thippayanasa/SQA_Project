@@ -80,6 +80,10 @@ public class Appointment {
     public String getNotes() {
         return notes;
     }
+
+    // Main method
+    public static void main(String[] args) {
+    }
 }
 
 // Enum for Appointment Type

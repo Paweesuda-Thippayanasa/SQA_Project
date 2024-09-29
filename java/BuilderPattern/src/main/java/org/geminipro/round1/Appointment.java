@@ -90,4 +90,8 @@ public class Appointment {
             return new Appointment(this);
         }
     }
+
+    // Main method
+    public static void main(String[] args) {
+    }
 }

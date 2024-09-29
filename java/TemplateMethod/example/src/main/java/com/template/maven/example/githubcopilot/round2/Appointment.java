@@ -11,6 +11,11 @@ public abstract class Appointment {
  private LocalDateTime appointmentDateTime;
  private String notes;
 
+
+    // Main method for demonstration
+    public static void main(String[] args) {
+    }
+
  public Appointment(String patientName, String doctorName, AppointmentType appointmentType, 
                     String personMakingAppointment, String clinicContactNumber, 
                     LocalDateTime appointmentDateTime) {

@@ -52,7 +52,6 @@ public class Appointment {
     }
 
     // Getters for all fields can be added here if needed
-    // Getter and Setter methods for all fields
 
     public String getPatientName() {
         return patientName;
@@ -105,6 +104,12 @@ public class Appointment {
     public String getNotes() {
         return notes;
     }
+
+    // Main method
+    public static void main(String[] args) {
+    }
+
+
 }
 
 enum AppointmentType {

@@ -11,6 +11,10 @@ public abstract class Appointment {
     private LocalDateTime appointmentDateTime;
     private String notes;
 
+    // Main method for demonstration
+    public static void main(String[] args) {
+    }
+
     public enum AppointmentType {
         TOOTH_EXTRACTION, DEVICE_INSTALLATION, MONTHLY_CHECK_UP, DEVICE_REMOVAL
     }

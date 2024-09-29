@@ -1,0 +1,169 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AppointmentTest</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.template.maven.example.gemini15flash.round2</a>
+</div>
+
+<h1>Coverage Summary for Class: AppointmentTest (com.template.maven.example.gemini15flash.round2)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AppointmentTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (26/26)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.template.maven.example.gemini15flash.round2;
+&nbsp;//File: AppointmentTest.java
+&nbsp;import org.junit.jupiter.api.Test;
+&nbsp;import static org.junit.jupiter.api.Assertions.*;
+&nbsp;
+&nbsp;import java.time.LocalDateTime;
+&nbsp;
+<b class="fc">&nbsp;public class AppointmentTest {</b>
+&nbsp;
+&nbsp;    private static final String PATIENT_NAME = &quot;John Doe&quot;;
+&nbsp;    private static final String DOCTOR_NAME = &quot;Dr. Smith&quot;;
+&nbsp;    private static final String APPOINTMENT_MAKER = &quot;Jane Doe&quot;;
+&nbsp;    private static final String CLINIC_CONTACT_NUMBER = &quot;123-456-7890&quot;;
+<b class="fc">&nbsp;    private static final LocalDateTime APPOINTMENT_DATE_TIME = LocalDateTime.of(2024, 3, 15, 10, 0);</b>
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void testCreateAppointmentWithNotes() {
+<b class="fc">&nbsp;        Appointment appointment = new AppointmentWithNotes(PATIENT_NAME, DOCTOR_NAME,</b>
+&nbsp;                Appointment.AppointmentType.TOOTH_EXTRACTION, APPOINTMENT_MAKER, CLINIC_CONTACT_NUMBER,
+&nbsp;                APPOINTMENT_DATE_TIME, &quot;Please bring your insurance card.&quot;);
+&nbsp;
+<b class="fc">&nbsp;        assertEquals(PATIENT_NAME, appointment.getPatientName());</b>
+<b class="fc">&nbsp;        assertEquals(DOCTOR_NAME, appointment.getDoctorName());</b>
+<b class="fc">&nbsp;        assertEquals(Appointment.AppointmentType.TOOTH_EXTRACTION, appointment.getAppointmentType());</b>
+<b class="fc">&nbsp;        assertEquals(APPOINTMENT_MAKER, appointment.getAppointmentMaker());</b>
+<b class="fc">&nbsp;        assertEquals(CLINIC_CONTACT_NUMBER, appointment.getClinicContactNumber());</b>
+<b class="fc">&nbsp;        assertEquals(APPOINTMENT_DATE_TIME, appointment.getAppointmentDateTime());</b>
+<b class="fc">&nbsp;        assertEquals(&quot;Please bring your insurance card.&quot;, appointment.getNotes());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void testCreateAppointmentWithoutNotes() {
+<b class="fc">&nbsp;        Appointment appointment = new AppointmentWithoutNotes(PATIENT_NAME, DOCTOR_NAME,</b>
+&nbsp;                Appointment.AppointmentType.DEVICE_INSTALLATION, APPOINTMENT_MAKER, CLINIC_CONTACT_NUMBER,
+&nbsp;                APPOINTMENT_DATE_TIME);
+&nbsp;
+<b class="fc">&nbsp;        assertEquals(PATIENT_NAME, appointment.getPatientName());</b>
+<b class="fc">&nbsp;        assertEquals(DOCTOR_NAME, appointment.getDoctorName());</b>
+<b class="fc">&nbsp;        assertEquals(Appointment.AppointmentType.DEVICE_INSTALLATION, appointment.getAppointmentType());</b>
+<b class="fc">&nbsp;        assertEquals(APPOINTMENT_MAKER, appointment.getAppointmentMaker());</b>
+<b class="fc">&nbsp;        assertEquals(CLINIC_CONTACT_NUMBER, appointment.getClinicContactNumber());</b>
+<b class="fc">&nbsp;        assertEquals(APPOINTMENT_DATE_TIME, appointment.getAppointmentDateTime());</b>
+<b class="fc">&nbsp;        assertNull(appointment.getNotes());</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @Test
+&nbsp;    void testAllAppointmentTypes() {
+<b class="fc">&nbsp;        Appointment appointment1 = new AppointmentWithNotes(PATIENT_NAME, DOCTOR_NAME,</b>
+&nbsp;                Appointment.AppointmentType.TOOTH_EXTRACTION, APPOINTMENT_MAKER, CLINIC_CONTACT_NUMBER,
+&nbsp;                APPOINTMENT_DATE_TIME, &quot;Notes&quot;);
+<b class="fc">&nbsp;        Appointment appointment2 = new AppointmentWithNotes(PATIENT_NAME, DOCTOR_NAME,</b>
+&nbsp;                Appointment.AppointmentType.DEVICE_INSTALLATION, APPOINTMENT_MAKER, CLINIC_CONTACT_NUMBER,
+&nbsp;                APPOINTMENT_DATE_TIME, &quot;Notes&quot;);
+<b class="fc">&nbsp;        Appointment appointment3 = new AppointmentWithNotes(PATIENT_NAME, DOCTOR_NAME,</b>
+&nbsp;                Appointment.AppointmentType.MONTHLY_CHECK_UP, APPOINTMENT_MAKER, CLINIC_CONTACT_NUMBER,
+&nbsp;                APPOINTMENT_DATE_TIME, &quot;Notes&quot;);
+<b class="fc">&nbsp;        Appointment appointment4 = new AppointmentWithNotes(PATIENT_NAME, DOCTOR_NAME,</b>
+&nbsp;                Appointment.AppointmentType.DEVICE_REMOVAL, APPOINTMENT_MAKER, CLINIC_CONTACT_NUMBER,
+&nbsp;                APPOINTMENT_DATE_TIME, &quot;Notes&quot;);
+&nbsp;
+<b class="fc">&nbsp;        assertNotNull(appointment1);</b>
+<b class="fc">&nbsp;        assertNotNull(appointment2);</b>
+<b class="fc">&nbsp;        assertNotNull(appointment3);</b>
+<b class="fc">&nbsp;        assertNotNull(appointment4);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-29 16:29</div>
+</div>
+</body>
+</html>

@@ -3,14 +3,15 @@ package org.copilot.round2;
 import java.time.LocalDateTime;
 
 public class Appointment {
-    private final String patientName;
-    private final String doctorName;
-    private final AppointmentType appointmentType;
-    private final String appointmentMakerName;
-    private final String clinicContactNumber;
-    private final LocalDateTime appointmentDateTime;
-    private final String notes;
+    private String patientName;
+    private String doctorName;
+    private AppointmentType appointmentType;
+    private String appointmentMakerName;
+    private String clinicContactNumber;
+    private LocalDateTime appointmentDateTime;
+    private String notes;
 
+    // Private constructor to enforce use of the Builder
     private Appointment(AppointmentBuilder builder) {
         this.patientName = builder.patientName;
         this.doctorName = builder.doctorName;
@@ -21,6 +22,7 @@ public class Appointment {
         this.notes = builder.notes;
     }
 
+    // Static builder class
     public static class AppointmentBuilder {
         private final String patientName;
         private final String doctorName;
@@ -50,7 +52,7 @@ public class Appointment {
         }
     }
 
-    // Getters for all fields
+    // Getters
     public String getPatientName() {
         return patientName;
     }
@@ -79,8 +81,41 @@ public class Appointment {
         return notes;
     }
 
+    // Setters
+    public void setPatientName(String patientName) {
+        this.patientName = patientName;
+    }
 
-    enum AppointmentType {
+    public void setDoctorName(String doctorName) {
+        this.doctorName = doctorName;
+    }
+
+    public void setAppointmentType(AppointmentType appointmentType) {
+        this.appointmentType = appointmentType;
+    }
+
+    public void setAppointmentMakerName(String appointmentMakerName) {
+        this.appointmentMakerName = appointmentMakerName;
+    }
+
+    public void setClinicContactNumber(String clinicContactNumber) {
+        this.clinicContactNumber = clinicContactNumber;
+    }
+
+    public void setAppointmentDateTime(LocalDateTime appointmentDateTime) {
+        this.appointmentDateTime = appointmentDateTime;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+    }
+
+    // Enum for appointment types
+    public enum AppointmentType {
         TOOTH_EXTRACTION,
         DEVICE_INSTALLATION,
         MONTHLY_CHECKUP,

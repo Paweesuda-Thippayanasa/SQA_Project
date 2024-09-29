@@ -11,6 +11,10 @@ public abstract class Appointment {
  private LocalDateTime appointmentDateTime;
  private String notes;
 
+    // Main method for demonstration
+    public static void main(String[] args) {
+    }
+
  // Template Method
  public final void createAppointment() {
      setPatientName();

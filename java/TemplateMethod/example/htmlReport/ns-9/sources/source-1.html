@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Appointment</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.template.maven.example.gemini15pro.round2</a>
+</div>
+
+<h1>Coverage Summary for Class: Appointment (com.template.maven.example.gemini15pro.round2)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Appointment</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (18/18)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Appointment$AppointmentType</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/5)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (13/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (23/23)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.template.maven.example.gemini15pro.round2;
+&nbsp;import java.time.LocalDateTime;
+&nbsp;
+<b class="fc">&nbsp;public abstract class Appointment {</b>
+&nbsp;
+&nbsp;    private String patientName;
+&nbsp;    private String doctorName;
+&nbsp;    private AppointmentType appointmentType;
+&nbsp;    private String madeBy;
+&nbsp;    private String clinicContactNumber;
+&nbsp;    private LocalDateTime appointmentDateTime;
+&nbsp;    private String notes;
+&nbsp;
+<b class="fc">&nbsp;    // Main method for demonstration</b>
+<b class="fc">&nbsp;    public static void main(String[] args) {</b>
+<b class="fc">&nbsp;    }</b>
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;    public enum AppointmentType {</b>
+&nbsp;        TOOTH_EXTRACTION,
+&nbsp;        DEVICE_INSTALLATION,
+&nbsp;        MONTHLY_CHECK_UP,
+&nbsp;        DEVICE_REMOVAL
+&nbsp;    }
+<b class="fc">&nbsp;</b>
+<b class="fc">&nbsp;    // Template Method</b>
+<b class="fc">&nbsp;    public final Appointment createAppointment(String patientName, String doctorName, AppointmentType appointmentType, </b>
+<b class="fc">&nbsp;                                              String madeBy, String clinicContactNumber, LocalDateTime appointmentDateTime) {</b>
+<b class="fc">&nbsp;        this.patientName = patientName;</b>
+<b class="fc">&nbsp;        this.doctorName = doctorName;</b>
+<b class="fc">&nbsp;        this.appointmentType = appointmentType;</b>
+<b class="fc">&nbsp;        this.madeBy = madeBy;</b>
+&nbsp;        this.clinicContactNumber = clinicContactNumber;
+&nbsp;        this.appointmentDateTime = appointmentDateTime;
+&nbsp;        addNotes();
+&nbsp;        return this;
+&nbsp;    }
+<b class="fc">&nbsp;</b>
+&nbsp;    // Hook method (optional)
+&nbsp;    protected void addNotes() {
+&nbsp;        // Subclasses can override to add notes
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    // Getters
+&nbsp;    public String getPatientName() {
+<b class="fc">&nbsp;        return patientName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getDoctorName() {
+<b class="fc">&nbsp;        return doctorName;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public AppointmentType getAppointmentType() {
+<b class="fc">&nbsp;        return appointmentType;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getMadeBy() {
+<b class="fc">&nbsp;        return madeBy;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getClinicContactNumber() {
+<b class="fc">&nbsp;        return clinicContactNumber;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public LocalDateTime getAppointmentDateTime() {
+<b class="fc">&nbsp;        return appointmentDateTime;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getNotes() {
+&nbsp;        return notes;
+<b class="fc">&nbsp;    }</b>
+&nbsp;
+&nbsp;    // Setter for notes
+&nbsp;    public void setNotes(String notes) {
+&nbsp;        this.notes = notes;
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-09-29 16:29</div>
+</div>
+</body>
+</html>

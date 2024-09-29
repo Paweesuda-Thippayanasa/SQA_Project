@@ -112,5 +112,11 @@ public class Appointment {
         public Appointment build() {
             return new Appointment(this);
         }
+
+
+    }
+
+    // Main method
+    public static void main(String[] args) {
     }
 }

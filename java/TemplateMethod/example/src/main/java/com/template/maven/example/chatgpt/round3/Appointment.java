@@ -16,6 +16,10 @@ public abstract class Appointment {
     private String appointmentDateTime;
     private String notes;
 
+    // Main method for demonstration
+    public static void main(String[] args) {
+    }
+
     // Template Method
     public final void scheduleAppointment(String patientName, String doctorName, AppointmentType appointmentType, String bookedBy, String clinicContactNumber, String appointmentDateTime) {
         this.patientName = patientName;

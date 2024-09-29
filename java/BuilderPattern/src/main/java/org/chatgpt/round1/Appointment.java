@@ -95,6 +95,10 @@ public class Appointment {
                 ", notes='" + notes + '\'' +
                 '}';
     }
+
+    // Main method
+    public static void main(String[] args) {
+    }
 }
 
 enum AppointmentType {

@@ -19,6 +19,10 @@ abstract class AppointmentTemplate {
  protected LocalDateTime appointmentDateTime;
  protected String notes;
 
+ // Main method for demonstration
+ public static void main(String[] args) {
+ }
+
  public final void scheduleAppointment(String patientName, String doctorName, AppointmentType appointmentType,
                                        String appointmentMaker, String clinicContactNumber, LocalDateTime appointmentDateTime) {
      this.patientName = patientName;
@@ -46,6 +50,7 @@ abstract class AppointmentTemplate {
              "Date and Time: " + appointmentDateTime + "\n" +
              "Notes: " + notes;
  }
+
 }
 
 class ToothExtractionAppointment extends AppointmentTemplate {
@@ -75,3 +80,5 @@ class DeviceRemovalAppointment extends AppointmentTemplate {
      return "Patient should be prepared for a retainer fitting.";
  }
 }
+
+
