@@ -14,25 +14,33 @@ def appointment_data():
         'clinic_contact_number': '+1-555-123-4567'
     }
 
-@pytest.mark.parametrize("field, value", [
-    ('doctor_name', 'Dr. Jones'),
-    ('patient_name', 'Jane Doe'),
-    ('appointment_type', 'Monthly rubber band change'),
-    ('date_time', datetime(2024, 3, 22, 14, 30)),
-    ('note', 'Follow-up after adjustment'),
-    ('created_by', 'Dental Assistant'),
-    ('clinic_contact_number', '+1-555-987-6543')
+@pytest.mark.parametrize("field, value, setter_method", [
+    ('doctor_name', 'Dr. Jones', 'for_doctor'),
+    ('patient_name', 'Jane Doe', 'for_patient'),
+    ('appointment_type', 'Monthly rubber band change', 'with_type'),
+    ('date_time', datetime(2024, 3, 22, 14, 30), 'on_date_time'),
+    ('note', 'Follow-up after adjustment', 'with_note'),
+    ('created_by', 'Dental Assistant', 'created_by'),
+    ('clinic_contact_number', '+1-555-987-6543', 'with_clinic_contact')
 ])
-def test_builder_with_individual_fields(appointment_data, field, value):
+def test_builder_with_individual_fields(field, value, setter_method):
     # Arrange
     builder = AppointmentBuilder()
 
     # Act
-    # Dynamically set attribute using setattr
-    setattr(builder, field, value)
+    # Set the required fields
+    builder.for_doctor('Dr. Smith') \
+           .for_patient('John Doe') \
+           .with_type('Fitting of braces') \
+           .on_date_time(datetime(2024, 3, 15, 10, 0))
+    
+    # Dynamically call the appropriate setter method
+    getattr(builder, setter_method)(value)
+    
+    # Build the appointment
     appointment = builder.build()
 
-    # Assert
+    # Assert that the specific field has been set correctly
     assert getattr(appointment, field) == value
 
 def test_builder_with_all_fields(appointment_data):

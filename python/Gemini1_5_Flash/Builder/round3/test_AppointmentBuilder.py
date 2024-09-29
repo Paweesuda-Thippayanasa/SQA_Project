@@ -24,7 +24,7 @@ class TestAppointmentBuilder:
         appointment = appointment_builder.with_doctor("Dr. Jones")\
                                          .for_patient("Jane Doe")\
                                          .of_type("Monthly Rubber Band Change")\
-                                         .on_date_time(datetime(2024, 4, 1, 14, 0, 0))\
+                                         .on_date_time(datetime.datetime(2024, 4, 1, 14, 0, 0))\
                                          .with_note("Please bring your old rubber bands.")\
                                          .created_by("Bob")\
                                          .at_clinic_number("987-654-3210")\
@@ -33,7 +33,7 @@ class TestAppointmentBuilder:
         assert appointment.doctor_name == "Dr. Jones"
         assert appointment.patient_name == "Jane Doe"
         assert appointment.appointment_type == "Monthly Rubber Band Change"
-        assert appointment.date_time == datetime(2024, 4, 1, 14, 0, 0)
+        assert appointment.date_time == datetime.datetime(2024, 4, 1, 14, 0, 0)
         assert appointment.note == "Please bring your old rubber bands."
         assert appointment.creator_name == "Bob"
         assert appointment.clinic_contact_number == "987-654-3210"

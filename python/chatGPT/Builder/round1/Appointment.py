@@ -8,6 +8,7 @@ class Appointment:
         self.note = note
         self.creator_name = creator_name
         self.clinic_contact = clinic_contact
+  
 
     def __str__(self):
         return (f"Appointment with Dr. {self.doctor_name} for {self.patient_name} "
@@ -15,3 +16,5 @@ class Appointment:
                 f"Note: {self.note}. "
                 f"Appointment created by {self.creator_name}. "
                 f"Contact: {self.clinic_contact}")
+
+

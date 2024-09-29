@@ -23,7 +23,7 @@ def test_set_patient(builder):
     assert appointment.patient == patient_name
 
 def test_set_date_time(builder):
-    date_time = datetime(2024, 3, 15, 10, 0)
+    date_time = datetime.datetime(2024, 3, 15, 10, 0)
     appointment = builder.set_date_time(date_time).build()
     assert appointment.date_time == date_time
 
@@ -46,7 +46,7 @@ def test_build_appointment(builder):
     appointment = builder.set_doctor("Dr. Smith")\
                      .set_patient("John Doe")\
                      .set_appointment_type("tooth extraction")\
-                     .set_date_time(datetime(2024, 3, 15, 10, 0))\
+                     .set_date_time(datetime.datetime(2024, 3, 15, 10, 0))\
                      .set_note("Please bring your insurance card.")\
                      .set_creator("Jane Doe")\
                      .set_clinic_contact("123-456-7890")\
@@ -55,7 +55,7 @@ def test_build_appointment(builder):
     assert appointment.doctor == "Dr. Smith"
     assert appointment.patient == "John Doe"
     assert appointment.appointment_type == "tooth extraction"
-    assert appointment.date_time == datetime(2024, 3, 15, 10, 0)
+    assert appointment.date_time == datetime.datetime(2024, 3, 15, 10, 0)
     assert appointment.note == "Please bring your insurance card."
     assert appointment.creator == "Jane Doe"
     assert appointment.clinic_contact == "123-456-7890"

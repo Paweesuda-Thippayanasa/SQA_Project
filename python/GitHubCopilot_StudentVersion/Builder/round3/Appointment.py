@@ -11,6 +11,7 @@ class Appointment:
         self.note = note
         self.creator_name = creator_name
         self.clinic_contact = clinic_contact
+        
 
     def __str__(self):
         return (f"Appointment with Dr. {self.doctor_name} for {self.patient_name} "
@@ -30,6 +31,7 @@ class AppointmentBuilder:
         self._note = None
         self._creator_name = None
         self._clinic_contact = None
+        return self 
 
     def set_doctor_name(self, doctor_name):
         self._doctor_name = doctor_name
